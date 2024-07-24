@@ -1,0 +1,128 @@
+<html><head>
+    <title>Cadastro de Alunos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #container {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid black;
+            box-shadow: 2px 2px 10px grey;
+            background-color: lightgrey;
+            width: 30%;
+        }
+        #tabelaContainer {
+            width: auto;
+            border: 1px solid black;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 2px 2px 10px grey;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+        .error-message, .success-message {
+            margin-top: 10px;
+        }
+        .error-message {
+            color: red;
+        }
+        .success-message {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>Cadastro de Alunos</h1>
+    <form id="alunoForm">
+        Código: <input type="text" id="codigoAluno"><br><br>
+        Nome: <input type="text" id="nomeAluno"><br><br>
+        Email: <input type="text" id="EmailAluno"><br><br>
+        Fone: <input type="text" id="foneAluno"><br><br>
+        <input type="button" value="Cadastrar" onclick="cadastrarAluno()">
+        <input type="button" value="Listar" onclick="listarAlunos()">
+        <input type="button" value="Reset" onclick="limparVisualizacao()">
+    </form>
+    <p id="errorMsg" class="error-message"></p>
+    <p id="successMsg" class="success-message"></p>
+</div>
+
+<div id="tabelaContainer">
+    <h2>Alunos Cadastrados</h2>
+    <div id="tabelaAlunos"><table><thead><tr><th>Código</th><th>Nome</th><th>Email</th><th>Fone</th></tr></thead><tbody></tbody></table></div>
+</div>
+
+<script>
+    const alunos = [];
+
+    function cadastrarAluno() {
+        const codigoAluno = document.getElementById("codigoAluno").value;
+        const nomeAluno = document.getElementById("nomeAluno").value;
+        const EmailAluno = document.getElementById("EmailAluno").value;
+        const foneAluno = document.getElementById("foneAluno").value;
+
+        for(let aluno of alunos) {
+            if(aluno.codigoAluno === codigoAluno) {
+                document.getElementById("errorMsg").textContent = "Código de aluno já existe!";
+                document.getElementById("successMsg").textContent = "";
+                return;
+            }
+        }
+
+        const novoAluno = { codigoAluno, nomeAluno, EmailAluno, foneAluno };
+        alunos.push(novoAluno);
+
+        document.getElementById("errorMsg").textContent = "";
+        document.getElementById("successMsg").textContent = `Aluno com o código ${codigoAluno} inserido com sucesso`;
+
+        limparFormulario();
+    }
+
+    function listarAlunos() {
+        const tabelaAlunos = document.getElementById("tabelaAlunos");
+        tabelaAlunos.innerHTML = '';
+
+        let tabela = '<table><thead><tr><th>Código</th><th>Nome</th><th>Email</th><th>Fone</th></tr></thead><tbody>';
+
+        for(let aluno of alunos) {
+            tabela += `<tr><td>${aluno.codigoAluno}</td><td>${aluno.nomeAluno}</td><td>${aluno.EmailAluno}</td><td>${aluno.foneAluno}</td></tr>`;
+        }
+
+        tabela += '</tbody></table>';
+
+        tabelaAlunos.innerHTML = tabela;
+    }
+
+    function limparFormulario() {
+        document.getElementById("codigoAluno").value = '';
+        document.getElementById("nomeAluno").value = '';
+        document.getElementById("EmailAluno").value = '';
+        document.getElementById("foneAluno").value = '';
+        document.getElementById("errorMsg").textContent = '';
+    }
+
+    function limparVisualizacao() {
+        document.getElementById("tabelaAlunos").innerHTML = '';
+    }
+</script>
+
+
+
+</body></html>

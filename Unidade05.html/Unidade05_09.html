@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário com E-mail e Senha</title>
+    <style>
+        body {
+            background-color: grey;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .box {
+            background-color: lightgrey;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #resultado {
+            color: darkblue;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .blue-button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .grey-button {
+            background-color: grey;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Formulário de Login</h1>
+        <form id="myForm">
+            <label for="email">E-mail:</label>
+            <input type="text" id="email"><br><br>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha"><br><br>
+            <button type="button" class="blue-button" onclick="mostrarValores()">Mostrar Valores</button>
+            <button type="button" class="grey-button" onclick="limparFormulario()">Reset</button>
+        </form>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function mostrarValores() {
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            document.getElementById('resultado').innerHTML = `E-mail: ${email}<br>Senha: ${senha}`;
+        }
+
+        function limparFormulario() {
+            document.getElementById('email').value = '';
+            document.getElementById('senha').value = '';
+            document.getElementById('resultado').innerHTML = '';
+        }
+    </script>
+
+</body>
+
+</html>

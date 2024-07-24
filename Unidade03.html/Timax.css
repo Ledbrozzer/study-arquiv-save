@@ -1,0 +1,52 @@
+body {
+    background-color: #779bea;
+    color: #000000;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+h1 {
+    background-color: #d3a603;
+    color: #000000;
+    line-height: 200%;
+    font-family: Georgia, "Times New Roman", serif;
+    text-indent: 1em;
+}
+
+h2 {
+    background-color: #bcc0c0;
+    color: #000000;
+    font-family: Georgia, "Times New Roman", serif;
+    text-align: center;
+}
+
+nav {
+    font-weight: bold;
+    font-size: 1.25em;
+    word-spacing: 1em;
+}
+
+p {
+    font-size: .90em;
+    text-indent: 3em;
+}
+
+ul {
+    font-weight: bold;
+}
+
+.corVermelha {
+    color: #c70000;
+}
+
+footer {
+    color: #2942a9;
+    font-size: .75em;
+    font-style: italic;
+}
+
+.empresa {
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25em;
+    color: #2942a9;
+}

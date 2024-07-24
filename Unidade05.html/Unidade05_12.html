@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="CSS_Unidade05_12.css">
+    <script src="Unidade05_12.js"></script>
+    <title>Cadastramento de Estudantes</title>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>Cadastramento de Estudantes</h1>
+        <form id="alunoForm">
+            <label for="codigoAluno">Código:</label><input type="text" id="codigoAluno"><br><br>
+            <label for="nomeAluno">Nome:</label><input type="text" id="nomeAluno"><br><br>
+            <label for="EmailAluno">Email:</label><input type="text" id="EmailAluno"><br><br>
+            <label for="foneAluno">Fone:</label><input type="text" id="foneAluno"><br><br>
+            <div style="text-align: center;">
+                <input type="button" id="cadastrarBtn" value="Cadastrar" onclick="cadastrarAluno()">
+                <input type="button" id="resetBtn" value="Reset" onclick="resetForm()">
+            </div>
+        </form>
+        <p id="errorMsg" class="error-message"></p>
+        <p id="successMsg" class="success-message"></p>
+    </div>
+
+
+
+</body></html>

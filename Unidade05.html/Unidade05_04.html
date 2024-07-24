@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS_Unidade05_04.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="email"><b>Email</b></label>
+            <input type="email" id="emailField"
+                placeholder="Digite aqui o seu email" required>
+            <button type="button" class="login-button"
+                onclick="showEmail()">Login</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function showEmail() {
+            const emailField = document.getElementById("emailField");
+            const result = document.getElementById("result");
+            const email = emailField.value;
+            result.innerHTML = `O e-mail digitado é:
+                <span style='color: green;
+                font-weight: bold;'>${email}</span>`;
+
+        }
+    </script>
+
+</body>
+
+</html>

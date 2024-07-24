@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #aeaeae;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    box-shadow: 10px 10px 10px grey;
+    background-color: lightgrey;
+    width: 30%;
+}
+
+#alunoForm {
+    text-align: center;
+}
+
+#cadastrarBtn {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+#resetBtn {
+    background-color: rgb(84, 84, 84);
+    color: white;
+    font-weight: bold;
+}
+
+.error-message,
+.success-message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.error-message {
+    color: rgb(191, 0, 0);
+}
+
+.success-message {
+    color: green;
+}
+
+.codigo-highlight {
+    color: black;
+    font-weight: bold;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}

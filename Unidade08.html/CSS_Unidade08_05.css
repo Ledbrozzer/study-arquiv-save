@@ -1,0 +1,39 @@
+/* O CSS é o mesmo que você forneceu anteriormente */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dad9d9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 500px;
+    text-align: center;
+    background-color: #d3d3d3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #989595;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.compare-button {
+    background-color: blue;
+    color: white;
+}
+
+.reset-button {
+    background-color: gray;
+    color: white;
+}

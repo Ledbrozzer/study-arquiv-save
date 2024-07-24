@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Select List</title>
+    <style>
+        body {
+            background-color: lightgrey;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 16px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 12px;
+            width: 100px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button.enviar {
+            background-color: #007bff;
+            color: white;
+        }
+
+        button.enviar:hover {
+            background-color: #0056b3;
+        }
+
+        button.reset {
+            background-color: gray;
+            color: white;
+        }
+
+        button.reset:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Escolha uma fruta</h2>
+
+    <form id="myForm">
+        <label for="frutas">Selecione:</label>
+        <select id="frutas" name="frutas">
+            <option value="laranja">Laranja</option>
+            <option value="banana">Banana</option>
+            <option value="cereja">Cereja</option>
+            <option value="pera">Pera</option>
+            <option value="abacaxi">Abacaxi</option>
+            <option value="uva">Uva</option>
+        </select>
+        <br>
+        <button type="button" class="enviar" onclick="mostrarSelecao()">Enviar</button>
+        <button type="button" class="reset" onclick="limparSelecao()">Reset</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarSelecao() {
+            const selectElement = document.getElementById("frutas");
+            const valorSelecionado = selectElement.options[selectElement.selectedIndex].value;
+            document.getElementById("resultado").innerText = "Você escolheu: " + valorSelecionado;
+        }
+
+        function limparSelecao() {
+            document.getElementById("resultado").innerText = "";
+        }
+    </script>
+
+
+</body>
+</html>
